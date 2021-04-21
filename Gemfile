@@ -31,6 +31,23 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4' 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
+  
+  ################ PRY Related Gems #################################
+
+  # IRB alternative and runtime developer console
+  gem 'pry'
+  # Use Pry as your rails console
+  gem 'pry-rails'
+  # Combine 'pry' with 'byebug'. Adds 'step', 'next', 'finish', 'continue' and 'break' commands to control execution.
+  gem 'pry-byebug'
+  # Pry Doc is a Pry REPL plugin. It provides extended documentation support for the REPL by means of improving the `show-doc` and `show-source` commands.
+  gem 'pry-doc'
+  # Allows you to wrap code in Pry::rescue{ } to open a pry session at any unhandled exceptions
+  gem 'pry-rescue'
+
+  ################ END PRY Related Gems
+
 end
 
 group :development do
