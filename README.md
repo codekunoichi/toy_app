@@ -26,8 +26,21 @@ This application takes a simple micro blogging post idea and creates a web appli
 - `git commit -m "Add platform x86_64-linux to the Gemfile.Lock"`
 - `git push && git push heroku`
 
+
 ## Users resource addition 
 - `rails generate scaffold User name:string email:string`
+
+## Microposts resource addition
+- `rails generate scaffold Micropost content:text user_id:integer`
+
+## Steps to deploy successfully to Heroku
+- After adding models/controller scaffolding for users and microposts - push to Heroku
+- `git push heroku`
+- When you open the app you will see an error. This is because the database migration has not been finished yet.
+- You can see the errors by looking through the logs
+- `heroku logs`
+- `heroku run rails db:migrate`
+- After this app opens and functioning.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
