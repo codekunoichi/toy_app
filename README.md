@@ -43,7 +43,7 @@ This application takes a simple micro blogging post idea and creates a web appli
 - After this app opens and functioning.
 
 ## Domain Model
-To generate the domain model add the gem `rails-erd`
+- To generate the domain model add the gem `rails-erd`
 
 ```
 group :development do
@@ -51,13 +51,13 @@ group :development do
 end
 ```
 
-Install graphviz
+- Install graphviz
 
 `brew install graphviz`
 
-Run `bundle install`
+- Run `bundle install`
 
-Create a rake task
+- Create a rake task
 
 ```
 lib/tasks/erd.rake
@@ -69,7 +69,7 @@ task :generate_erd do
 end
 ```
 
-Run `rake generate_erd` to regenerate (must have graphvis).
+- Run `rake generate_erd` to regenerate (must have graphvis).
 ![](/erd.png)
 
 
