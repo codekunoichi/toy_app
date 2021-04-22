@@ -42,25 +42,34 @@ This application takes a simple micro blogging post idea and creates a web appli
 - `heroku run rails db:migrate`
 - After this app opens and functioning.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Domain Model
+To generate the domain model add the gem `rails-erd`
 
-Things you may want to cover:
+```
+group :development do
+  gem 'rails-erd'
+end
+```
 
-* Ruby version
+Install graphviz
 
-* System dependencies
+`brew install graphviz`
 
-* Configuration
+Run `bundle install`
 
-* Database creation
+Create a rake task
 
-* Database initialization
+```
+lib/tasks/erd.rake
+desc 'Generate Entity Relationship Diagram'
+task :generate_erd do
+  system "erd --inheritance --filetype=dot --direct --attributes=foreign_keys,content"
+  system "dot -Tpng erd.dot > erd.png"
+  File.delete('erd.dot')
+end
+```
 
-* How to run the test suite
+Run `rake generate_erd` to regenerate (must have graphvis).
+![](/erd.png)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
