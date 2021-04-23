@@ -72,4 +72,21 @@ end
 - Run `rake generate_erd` to regenerate (must have graphvis).
 ![](/erd.png)
 
+## Undoing Things
+Following outlines, how do you undo generated code. Since it will happen occaisionally. Rails provides ways to help you recover from such mistakes
 
+### Controller Code Generation - Add/Delete
+
+`rails generate controller StaticPages home help`
+`rails destroy  controller StaticPages home help`
+
+### Model Code Generation - Add/Delete
+
+`rails generate model User name:string email:string`
+`rails destroy model User`
+
+### Migration Code Generation - Add/Delete
+
+`rails db:migrate`
+`rails db:rollback`
+`rails db:migrate VERSION=0`
