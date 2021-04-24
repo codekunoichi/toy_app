@@ -90,3 +90,16 @@ Following outlines, how do you undo generated code. Since it will happen occaisi
 `rails db:migrate`
 `rails db:rollback`
 `rails db:migrate VERSION=0`
+
+## Testing Rails App
+
+The auto-generated code adds 
+`rails test`
+
+On Ruby 3.0, due to a missing gem, the above command did not work. So following this, added to the Gemfile
+
+`gem 'rexml', '~> 3.2', '>= 3.2.4'`
+
+https://stackoverflow.com/questions/65479863/rails-6-1-ruby-3-0-0-tests-error-as-they-cannot-load-rexml
+
+Once it was added the rails test framework functioned properly.
